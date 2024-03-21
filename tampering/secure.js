@@ -46,6 +46,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/register", (req, res) => {
+  
   const sanitizedName = escapeHTML(req.body.name.trim());
   req.session.user = sanitizedName;
   res.send(`<p>Thank you</p> <a href="/">Back home</a>`)

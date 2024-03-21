@@ -1,1 +1,6 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability in the insecure version lies in the hardcoding of the session secret key and the lack of secure session management practices. This vulnerability allows attackers to potentially guess or intercept the session secret key, leading to session hijacking or spoofing. Moreover, the insecure version does not utilize HTTP-only cookies or hash the session ID with a secret key, making it susceptible to session tampering and unauthorized access.
+
+Firstly, the session secret key is not hardcoded but passed as an argument, enhancing security by keeping it dynamic and less predictable. Additionally, the session ID is hashed with this secret, ensuring that any tampering with the session ID will result in the server dropping the request. Furthermore, the use of HTTP-only cookies prevents client-side JavaScript from accessing the session cookie, thereby reducing the risk of unauthorized access. The sameSite attribute is set to true, restricting cookies to be sent only in same-site requests, which adds another layer of protection against CSRF attacks. 
+These security measures collectively strengthen the application's resilience against spoofing attempts.
