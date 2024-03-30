@@ -1,2 +1,5 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+The vulnerability in the insecure version is that it lacks proper logging, making it difficult to trace actions back to specific users or events. Therefore, users could deny sending messages or accessing data since there's no record to prove otherwise. The secure version addresses this by implementing logging middleware, which records all requests and important actions, providing a clear audit trail to prevent repudiation.
+
+Additional security mechanisms to prevent such attacks include implementing user authentication and authorization mechanisms to ensure that only authorized users can perform specific actions. This could involve token-based authentication, role-based access control, or implementing OAuth for more robust authentication. Additionally, implementing encryption for sensitive data, such as user credentials and messages, can further enhance security by protecting data integrity and confidentiality.

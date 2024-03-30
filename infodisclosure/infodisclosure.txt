@@ -1,3 +1,7 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 Which CIA property does tampering violate?
 What additional security mechanisms can you incorporate?
+
+The secure version addresses this vulnerability by incorporating input validation and sanitization mechanisms. It checks if the username parameter is a string and then sanitizes it to remove any non-alphanumeric characters, mitigating the risk of NoSQL injection attacks. Additionally, it implements error handling to catch database query errors, ensuring the server responds appropriately without exposing sensitive information or encountering runtime issues.
+This  violates the integrity aspect of the CIA (Confidentiality, Integrity, Availability) triad. By altering data or parameters, attackers compromise the integrity of the system, undermining the trustworthiness and reliability of the information processed.
+Additional security measures include parameterized queries, content security policies, input validation libraries, security audits, and least privilege access.
